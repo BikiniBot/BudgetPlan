@@ -31,15 +31,18 @@ Date="{Binding SelectedDate}"
             </Grid.ColumnDefinitions>
 
             <Label Text="Одежда: "
+               x:Name="odejda"
                TextColor="Black"
                HorizontalOptions="Fill"
                VerticalOptions="Center" />
             <Label Text="Комуналка: "
-                    TextColor="Black"
+               x:Name="komun"    
+               TextColor="Black"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
             <Label Text="Прочее: "
-                    TextColor="Black"
+               x:Name="prochie"    
+               TextColor="Black"
                HorizontalOptions="End"
                VerticalOptions="Center" />
         </Grid>
@@ -67,6 +70,11 @@ Date="{Binding SelectedDate}"
             Margin="0, 0, 1, 1"
             TextColor="Black"/>
 
+        <Button 
+            x:Name="Buttondob"
+            Text="Подробнее"
+            Margin="0, 15, 0, 0"
+            Clicked="Buttondob_Clicked"/>
 
     </VerticalStackLayout>
 </ContentPage>
