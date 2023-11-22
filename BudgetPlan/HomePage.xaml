@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetPlan.HomePage"
+             Title="HomePage">
+ 
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+        <Label 
+            Text="Расходы за Ноябрь" 
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <DatePicker MinimumDate="{Binding MinDate}"
+MaximumDate="{Binding MaxDate}"
+Date="{Binding SelectedDate}" 
+            HorizontalOptions="End"
+            VerticalOptions="Center" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />    
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Одежда: "
+               TextColor="Black"
+               HorizontalOptions="Fill"
+               VerticalOptions="Center" />
+            <Label Text="Комуналка: "
+                    TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+            <Label Text="Прочее: "
+                    TextColor="Black"
+               HorizontalOptions="End"
+               VerticalOptions="Center" />
+        </Grid>
+            <Button 
+            x:Name="Buttonhis"
+            Text="Подробнее"
+            Margin="0, 15, 0, 0"
+            Clicked="Buttonhis_Clicked"/>
+
+        <StackLayout Padding="8">
+            <Label x:Name="header" Text="Выберите катигорию" FontSize="18" />
+            <Picker x:Name="languagePicker" Title = "Катигории расходов"
+                SelectedIndexChanged="PickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Одежда</x:String>
+                    <x:String>Камуналка</x:String>
+                    <x:String>Прочее</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <Entry 
+            x:Name="Title"
+            Text=""
+            Placeholder="Введите сумму которую потратили"
+            Margin="0, 0, 1, 1"
+            TextColor="Black"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
